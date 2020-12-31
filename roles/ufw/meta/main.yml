@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: ufw
+  author: Stephen Dunne
+  description: 'Simple UFW Management'
+  license: MIT
+  min_ansible_version: 2.10
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags:
+    - ufw
+    - firewall
+    - server
+
+dependencies: []

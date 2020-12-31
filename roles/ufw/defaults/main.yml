@@ -1,0 +1,16 @@
+---
+firewall_ufw_rules:
+  - { rule: "allow", port: "22", proto: "tcp" }
+
+firewall_ufw_delete: []
+
+firewall_ufw_policies:
+  incoming:
+    policy: "reject"
+    route: "no"
+  outgoing:
+    policy: "allow"
+    route: "no"
+  routed:
+    policy: "reject"
+    route: "yes"

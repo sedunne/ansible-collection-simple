@@ -1,0 +1,14 @@
+---
+namespace: "sedunne"
+name: "simple"
+version: "0.0.1"
+readme: "README.md"
+authors:
+  - "Stephen Dunne"
+license:
+  - "MIT"
+tags:
+  - collection
+  - server
+  - firewall
+repository: "https://github.com/sedunne/ansible-collection-simple"

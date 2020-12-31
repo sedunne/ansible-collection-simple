@@ -1,0 +1,27 @@
+---
+- name: "Enable UFW and Allow All"
+  community.general.ufw:
+    state: enabled
+    policy: allow
+
+- name: "Adding Rules"
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    proto: "{{ item.proto }}"
+    port: "{{ item.port }}"
+  loop: "{{ firewall_ufw_rules }}"
+
+- name: "Removing Rules"
+  community.general.ufw:
+    rule: "{{ item.rule }}"
+    proto: "{{ item.proto }}"
+    port: "{{ item.port }}"
+    delete: yes
+  loop: "{{ firewall_ufw_delete }}"
+
+- name: "Updating UFW Policies"
+  community.general.ufw:
+    direction: "{{ item.key }}"
+    policy: "{{ item.value.policy }}"
+    route: "{{ item.value.route }}"
+  loop: "{{ firewall_ufw_policies | dict2items }}"
