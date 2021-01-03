@@ -20,3 +20,18 @@ Dict of default policies and their state. Eg:
     policy: "reject"
     route: "no"
 ```
+
+## Usage
+By default, just including the role will setup the following:
+1. Enable UFW
+2. Allow all incoming traffic to port 22
+3. Set the default "incoming" and "routed" policies to "reject"
+4. Set the default "outgoing" policy to "allow"
+
+Defining your own rules will override the default of allowing port 22, so be careful not to lock yourself out.
+
+```
+- name: include firewall
+  import_role:
+    name: sedunne.simple.ufw
+```
