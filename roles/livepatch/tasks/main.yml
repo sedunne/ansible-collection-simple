@@ -7,4 +7,4 @@
 
 - name: Enable Canonical Livepatch Service
   ansible.builtin.command:
-    cmd: canonical-livepatch enable "{{ livepatch_token }}"
+    cmd: canonical-livepatch enable "{{ canonical_livepatch_token }}"
