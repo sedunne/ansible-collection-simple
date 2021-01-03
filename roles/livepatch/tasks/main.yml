@@ -1,0 +1,10 @@
+## setup canonical livepatch service
+---
+- name: Install 'canonical-livepatch' Snap
+  community.general.snap:
+    name: 'canonical-livepatch'
+    state: present
+
+- name: Enable Canonical Livepatch Service
+  ansible.builtin.command:
+    cmd: canonical-livepatch enable "{{ livepatch_token }}"
