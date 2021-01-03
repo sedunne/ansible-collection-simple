@@ -1,2 +1,2 @@
 # Simple UFW
-See `ansible-doc -t lookup sedunne.simple.ufw`
+See `ufw.md` in the `docs` directory of the collection for details on using this role.
