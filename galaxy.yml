@@ -1,7 +1,7 @@
 ---
 namespace: "sedunne"
 name: "simple"
-version: "0.0.2"
+version: "0.0.3"
 readme: "README.md"
 authors:
   - "Stephen Dunne"
@@ -11,4 +11,5 @@ tags:
   - collection
   - server
   - firewall
+  - livepatch
 repository: "https://github.com/sedunne/ansible-collection-simple"
