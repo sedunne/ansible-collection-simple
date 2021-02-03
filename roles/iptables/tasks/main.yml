@@ -1,0 +1,21 @@
+---
+- name: "Install iptables persistent package"
+  ansible.builtin.package:
+    name: "iptables-persistent"
+    state: "present"
+
+- name: "Template iptables configuration"
+  ansible.builtin.template:
+    src: rules_v4.j2
+    dest: "/etc/iptables/rules.v4"
+    owner: "root"
+    group: "root"
+    mode: "0640"
+  notify:
+    - Restart iptables
+
+- name: "Start iptables"
+  ansible.builtin.service:
+    name: "iptables"
+    state: "started"
+    enabled: true
