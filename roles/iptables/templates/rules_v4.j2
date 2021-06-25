@@ -1,4 +1,13 @@
 ## This file is managed by Ansible! Do not modify!
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+{% for rule in iptables_rules_nat %}
+{{ rule }}
+{% endfor %}
+COMMIT
 *filter
 :INPUT DROP [0:0]
 :FORWARD DROP [0:0]

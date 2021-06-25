@@ -1,10 +1,10 @@
 # Ansible Role: Simple iptables
-This role is a simple interface to manage iptables on Ubuntu systems. It's rather heavy-handed, and based on the stateful firewall configuration from the [Arch wiki](https://wiki.archlinux.org/index.php/Simple_stateful_firewall). It is not meant to support complicated chains or rules, and you might run into issues doing so.
+This role is a simple interface to manage iptables on systems. It's rather heavy-handed, and based on the stateful firewall configuration from the [Arch wiki](https://wiki.archlinux.org/index.php/Simple_stateful_firewall). It is not meant to support overly complicated chains or rules, and you might run into issues doing so.
 
 ## Requirements
-Currently supported releases are:
+Currently supported systems are:
 
-* 20.04 (focal)
+* Ubuntu 20.04 (Focal)
 
 ## Variables
 ### `iptables_rules`
@@ -15,6 +15,9 @@ iptables_rules:
   - "-A FORWARD -i docker0 -o eth0 -j ACCEPT"
   - "-A FORWARD -i eth0 -o docker0 -j ACCEPT"
 ```
+
+### `iptables_rules_nat`
+List of strings containing iptables rules similar to `iptables_rules`, but to be applied to the nat table instead.
 
 ## Usage
 By default, just including the role will setup the following:
