@@ -1,5 +1,7 @@
 ---
+## default filter table rules
 iptables_rules:
  - "-A TCP -p tcp --dport 22 -j ACCEPT"
 
- iptables_rules_nat: []
+## default nat table rules
+iptables_rules_nat: []
