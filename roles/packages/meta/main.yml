@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: packages
+  author: Stephen Dunne
+  description: 'Generic Package Installer'
+  license: MIT
+  min_ansible_version: 2.10
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+    - name: Debian
+      versions:
+        - buster
+
+  galaxy_tags:
+    - server
+    - ubuntu
+    - debian
+
+dependencies: []
