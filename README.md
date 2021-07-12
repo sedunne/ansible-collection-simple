@@ -13,5 +13,8 @@ This role installs and configures the Canonical Livepatch snap on Ubuntu systems
 ### ufw
 This role allows for basic UFW management on Ubuntu systems.
 
+### packages
+This role is a very basic interface to the `ansible.builtin.packages` module.
+
 ## Docs
 The `docs/` directory contains detailed information on the included roles, including their supported platforms and variables.
