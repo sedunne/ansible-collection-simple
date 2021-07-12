@@ -16,6 +16,6 @@
 
 - name: "Start iptables"
   ansible.builtin.service:
-    name: "iptables"
+    name: "{{ iptables_service_name[ansible_distribution] }}"
     state: "started"
     enabled: true

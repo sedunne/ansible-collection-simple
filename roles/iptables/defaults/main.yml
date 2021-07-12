@@ -5,3 +5,8 @@ iptables_rules:
 
 ## default nat table rules
 iptables_rules_nat: []
+
+## iptables "service" name
+iptables_service_name:
+  Ubuntu: 'iptables'
+  Debian: 'netfilter-persistent'
