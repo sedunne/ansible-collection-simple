@@ -1,0 +1,12 @@
+## This file is managed by Ansible! Do not modify!
+[Interface]
+ListenPort = {{ wireguard_listenport }}
+PrivateKey = {{ wg_key_private.stdout_lines.0 }}
+
+## Peerlist
+{% for peer in wireguard_peerlist %}
+## {{ peer.name }}
+[Peer]
+PublicKey = {{ peer.public_key }}
+AllowedIPs = {{ peer.allowed_ips|join(',') }}
+{% endfor %}

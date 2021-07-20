@@ -1,0 +1,7 @@
+---
+wireguard_peerlist: []
+
+wireguard_packagename: 'wireguard'
+wireguard_toolspackagename: 'wireguard-tools'
+
+wireguard_listenport: '51820'

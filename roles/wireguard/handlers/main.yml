@@ -1,0 +1,12 @@
+---
+- name: Set wg Interface Down
+  command: ip link set down dev wg0
+
+- name: Set wg Interface Up
+  command: ip link set up dev wg0
+
+- name: Cycle wg Interface
+  shell: ip link set down dev wg0 && ip link set up dev wg0
+
+- name: wg syncconf
+  shell: wg syncconf wg0 /etc/wireguard/wg0.conf
