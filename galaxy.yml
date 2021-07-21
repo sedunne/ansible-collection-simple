@@ -1,7 +1,7 @@
 ---
 namespace: "sedunne"
 name: "simple"
-version: "1.1.0"
+version: "1.2.0"
 readme: "README.md"
 authors:
   - "Stephen Dunne"
@@ -14,4 +14,5 @@ tags:
   - livepatch
   - ubuntu
   - debian
+  - wireguard
 repository: "https://github.com/sedunne/ansible-collection-simple"
