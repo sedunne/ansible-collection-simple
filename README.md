@@ -16,5 +16,8 @@ This role allows for basic UFW management on Ubuntu systems.
 ### packages
 This role is a very basic interface to the `ansible.builtin.packages` module.
 
+### wireguard
+This role installs (if needed) and sets up a Wireguard interface and peer list.
+
 ## Docs
 The `docs/` directory contains detailed information on the included roles, including their supported platforms and variables.
