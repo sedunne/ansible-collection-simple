@@ -1,7 +1,9 @@
 # Ansible Role: Wireguard
-This role installs and does basic Wireguard interface and peer configuration. Note that this role is *not* intended to be a "turn-key" VPN solution, and just aims to install and setup Wireguard. Additional firewall and/or networking work may be required for your setup. At the very least, you'll need to manually give the `wg0` interface an IP address, as no other networking configuration is done after bringing the interface up.
+This role installs and does basic Wireguard interface and peer configuration. Note that this role is *not* intended to be a "turn-key" VPN solution, and just aims to install and setup Wireguard. Additional firewall and/or networking work may be required for your setup. 
 
-There's also a slight "gotcha" if you apply the role to a host back-to-back without gathering facts between each run (e.g. using fact-caching). The role will try to create the `wg0` interface on a second run, before the facts have updated, since the `ansible_interfaces` fact won't include the `wg0` interface yet, so the conditional will fail. Clearing the cache/re-gathering facts should resolve this and let that task properly get skipped.
+At the very least, you'll need to manually give the `wg0` interface an IP address, as no other networking configuration is done after bringing the interface up. Additionally, there is no effort made by the module to persist the Wireguard interface, so this will need to be managed externally based on the system (and network manager) you're targeting.
+
+There's also a slight "gotcha" if you apply the role to a host back-to-back without gathering facts between each run (e.g. using fact-caching). The role will try to create the `wg0` interface on a second run, before the facts have updated, since the `ansible_interfaces` fact won't include the `wg0` interface yet. Clearing the cache/re-gathering facts should resolve this and let that task properly get skipped.
 
 ## Requirements
 Systems using a Linux kernel `5.6` or greater *should* have the module available by default, and only need a package in an available repository source that supplies the `wg` program (typically called 'wireguard-tools'on Deb-based).
