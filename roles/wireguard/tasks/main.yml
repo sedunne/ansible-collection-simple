@@ -18,9 +18,12 @@
     state: "present"
     name: "{{ wireguard_toolspackagename }}"
 
+## sometimes the interface needs to be added, but the config doesn't change, leaving the interface unconfigured.
+## adding the notify at the end should hopefully fix that.
 - name: Add wg0 Interface
   ansible.builtin.shell: ip link add dev wg0 type wireguard
   when: "'wg0' not in ansible_interfaces"
+  notify: "wg syncconf"
 
 - name: Wireguard Generate Keys
   ansible.builtin.shell: cd /etc/wireguard; wg genkey | tee privatekey | wg pubkey > publickey
