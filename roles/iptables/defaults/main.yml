@@ -1,9 +1,12 @@
 ---
 ## default filter table rules
 iptables4_rules:
+ - "-A ICMP -p icmp -m icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT"
  - "-A TCP -p tcp --dport 22 -j ACCEPT"
 
 iptables6_rules:
+ - "-A ICMP -p ipv6-icmp -m icmp6 --icmpv6-type 128 -m conntrack --ctstate NEW -j ACCEPT"
+ - "-A ICMP -s fe80::/10 -p ipv6-icmp -j ACCEPT"
  - "-A TCP -p tcp --dport 22 -j ACCEPT"
 
 ## default nat table rules
@@ -11,5 +14,5 @@ iptables4_rules_nat: []
 
 ## iptables "service" name
 iptables_service_name:
-  Ubuntu: 'iptables'
-  Debian: 'netfilter-persistent'
+ Ubuntu: 'iptables'
+ Debian: 'netfilter-persistent'
