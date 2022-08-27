@@ -5,10 +5,11 @@ This role is a simple interface to manage iptables on systems. It's rather heavy
 Currently supported systems are:
 
 * Ubuntu 20.04 (Focal)
+* Debian 11 (Bullseye)
 
 ## Variables
-### `iptables_rules`
-List of strings containing iptables rules in the format that they'd appear with via `iptables-save`. Eg:
+### `iptables4_rules`
+List of strings containing iptables v4 rules in the format that they'd appear with via `iptables-save`. Eg:
 ```
 iptables_rules:
   - "-A TCP -p tcp --dport 22 -j ACCEPT"
@@ -16,7 +17,10 @@ iptables_rules:
   - "-A FORWARD -i eth0 -o docker0 -j ACCEPT"
 ```
 
-### `iptables_rules_nat`
+### `iptables6_rules`
+Same as `iptables4_rules`, but for iptables v6.
+
+### `iptables4_rules_nat`
 List of strings containing iptables rules similar to `iptables_rules`, but to be applied to the nat table instead.
 
 ## Usage

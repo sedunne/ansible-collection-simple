@@ -4,7 +4,7 @@
 :INPUT ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
-{% for rule in iptables_rules_nat %}
+{% for rule in iptables4_rules_nat %}
 {{ rule }}
 {% endfor %}
 COMMIT
@@ -23,7 +23,7 @@ COMMIT
 -A INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
 -A INPUT -p tcp -j REJECT --reject-with tcp-reset
 -A INPUT -j REJECT --reject-with icmp-proto-unreachable
-{% for rule in iptables_rules %}
+{% for rule in iptables4_rules %}
 {{ rule }}
 {% endfor %}
 COMMIT

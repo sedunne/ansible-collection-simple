@@ -4,10 +4,20 @@
     name: "iptables-persistent"
     state: "present"
 
-- name: "Template iptables configuration"
+- name: "Template iptables v4 configuration"
   ansible.builtin.template:
     src: rules_v4.j2
     dest: "/etc/iptables/rules.v4"
+    owner: "root"
+    group: "root"
+    mode: "0640"
+  notify:
+    - Restart iptables
+
+- name: "Template iptables v6 configuration"
+  ansible.builtin.template:
+    src: rules_v6.j2
+    dest: "/etc/iptables/rules.v6"
     owner: "root"
     group: "root"
     mode: "0640"

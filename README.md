@@ -1,5 +1,5 @@
 # Ansible "Simple" Collection
-This collection is intended to house the small roles I've created to do various things.
+This collection is intended to house the small roles I've created to do various things. Roles are intented to be used with Debian/Ubuntu systems unless otherwise noted.
 
 Roles here are not meant to be incredibly feature rich or support a wide variety of configurations. Rather, the goal of these roles is just to provide something usable quick, configured in a hopefully-sane way. More featureful roles will be moved into their own repo, and managed more traditionally.
 
@@ -14,7 +14,7 @@ This role installs and configures the Canonical Livepatch snap on Ubuntu systems
 This role allows for basic UFW management on Ubuntu systems.
 
 ### packages
-This role is a very basic interface to the `ansible.builtin.packages` module.
+This role is a very basic interface to the `ansible.builtin.packages` module. OS independent.
 
 ### wireguard
 This role installs (if needed) and sets up a Wireguard interface and peer list.
